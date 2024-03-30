@@ -8,7 +8,7 @@ import { URL_FROTEND, URL_SERVICES } from 'src/app/config/config';
   providedIn: 'root'
 })
 export class AuthService {
-
+ 
   user: any = null;
   token: any = null;
 
@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    const URL = URL_SERVICES + "/auth/login_tienda";
+    const URL = URL_SERVICES + "/auth/login-tienda";
     return this.http.post(URL, { email: email, password: password }).pipe(
       map((auth: any) => {
         const result = this.saveLocalStorage(auth);
