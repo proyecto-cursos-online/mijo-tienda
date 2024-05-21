@@ -8,38 +8,34 @@ import { URL_FROTEND, URL_SERVICES } from 'src/app/config/config';
   providedIn: 'root'
 })
 export class AuthService {
- 
   user: any = null;
   token: any = null;
-
   constructor(
     public http: HttpClient,
-    public router: Router,
-  ) {
+    public router: Router
+  ) { 
     this.initAuth();
   }
-
-  initAuth() {
+  initAuth() { 
     if (localStorage.getItem("token")) {
-      this.user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") ?? '') : null;
+      this.user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")??''):null;
       this.token = localStorage.getItem("token");
     }
   }
-
   login(email: string, password: string) {
-    const URL = URL_SERVICES + "/auth/login-tienda";
+    let URL = URL_SERVICES + "/auth/login_tienda";
     return this.http.post(URL, { email: email, password: password }).pipe(
       map((auth: any) => {
         const result = this.saveLocalStorage(auth);
         return result;
       }),
+      // switchMap(() => this.getUserByToken()),
       catchError((err) => {
         console.error('err', err);
         return of(undefined);
       })
     );
   }
-
   saveLocalStorage(auth: any) {
     if (auth && auth.access_token) {
       localStorage.setItem("token", auth.access_token);
@@ -48,17 +44,13 @@ export class AuthService {
     }
     return false;
   }
-
-  register(data: any) {
-    const URL = URL_SERVICES + "/auth/register";
-    return this.http.post(URL, data);
-  }
-
+  register(data:any) {
+    let URL = URL_SERVICES + "/auth/register";
+    return this.http.post(URL, data)
+   }
   logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    setTimeout(() => {
-      location.href = URL_FROTEND + "/auth/login";
-    }, 50);
-  }
+    location.href = URL_FROTEND+"/login";
+   }
 }

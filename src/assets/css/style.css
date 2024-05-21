@@ -119,10 +119,10 @@
 /*-- Variables --*/
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap");
 :root {
-  --color-primary: #2f57ef;
-  --color-secondary: #b966e7;
+  --color-primary: #ed9e20;
+  --color-secondary: #f3b73c;
   --color-coral: #E9967A;
-  --color-violet: #800080;
+  --color-violet: #e78503;
   --color-pink: #DB7093;
   --color-heading: #192335;
   --color-body: #6b7385;
@@ -144,7 +144,13 @@
   --coral-opacity: #E9967A21;
   --violet-opacity: #80008021;
   --pink-opacity: #DB709321;
-  --white-opacity: #ffffff21;
+
+
+
+  --white-opacity: #ffffff21; 
+
+
+  
   --danger-opacity: #FF000310;
   --warning-opacity: #FF8F3C10;
   --success-opacity: #3EB75E10;
@@ -154,7 +160,7 @@
   --color-card-2: #ffedff;
   --color-card-3: #ffe8eb;
   --color-card-4: #e9f6ff;
-  --color-card-5: #5024D1;
+  --color-card-5: #f3b73c;
   --color-card-6: #3B3B46;
   --color-success: #3EB75E;
   --color-danger: #FF0003;
@@ -229,7 +235,7 @@
   --gradient-1: linear-gradient(rgb(255, 255, 255) 0%, rgb(239, 241, 255) 100%);
   --gradient-4: linear-gradient(180deg,#fff,#f6f9ff);
   --gradient-2: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(240, 242, 255) 100%);
-  --gradient-3: linear-gradient(90deg, #8DA9FC 0%, #B48DD5 100%);
+  --gradient-3: linear-gradient(90deg, #f7f768 0%, #FEFFB3 100%);
   --gradient-4: linear-gradient(180deg, #EFF1FF 0%, #FFFFFF 100%);
   --gradient-5: linear-gradient(rgb(239, 241, 255) 0%, rgb(239, 241, 255) 100%);
   --gradient-6: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(251, 199, 226, 0.15), rgba(220, 217, 254, 0.15));
@@ -13842,7 +13848,7 @@ Button Area
   transition: 0.4s;
 }
 .rbt-btn.btn-border-gradient {
-  background: linear-gradient(90deg, #CFA2E8, #637FEA);
+  background: linear-gradient(90deg, #feb02a, #fe7924, #fd4b22, #fa3630);
   border: none;
   outline: none;
   cursor: pointer;
@@ -15758,7 +15764,7 @@ span.transparent-button:hover i {
   top: 0;
   left: 0;
   position: absolute;
-  background: linear-gradient(90deg, #CFA2E8, #637FEA);
+  background: linear-gradient(90deg, #feb02a, #fe7924, #fd4b22, #fa3630);
   width: 100%;
   height: 100%;
 }
@@ -17082,7 +17088,7 @@ span.transparent-button:hover i {
   left: 0;
   right: 0;
   margin: 0 auto;
-  background-image: linear-gradient(90deg, #CFA2E8, #637FEA);
+  background-image: linear-gradient(90deg, #feb02a, #fe7924, #fd4b22, #fa3630);
   opacity: 0.09;
   border-radius: 100%;
   box-sizing: border-box;
@@ -17112,7 +17118,7 @@ span.transparent-button:hover i {
   overflow: hidden;
 }
 .rbt-counterup.border-bottom-gradient::before {
-  background: linear-gradient(90deg, #CFA2E8, #637FEA);
+  background: linear-gradient(90deg, #feb02a, #fe7924, #fd4b22, #fa3630);
   position: absolute;
   content: "";
   left: 0;
@@ -18478,7 +18484,7 @@ span.transparent-button:hover i {
   height: 240px;
   right: -96px;
   margin: 0 auto;
-  background-image: linear-gradient(90deg, #CFA2E8, #637FEA);
+  background-image: linear-gradient(90deg, #feb02a, #fe7924, #fd4b22, #fa3630);
   opacity: 0.09;
   border-radius: 100%;
   box-sizing: border-box;
@@ -28574,6 +28580,6 @@ Course Sidebar
 }
 /*# sourceMappingURL=../maps/style.css.map */
 .countdown{
-  background-color: #807bf2;
+  background-color: #fcbc45;
   border-radius: 10px;
 }

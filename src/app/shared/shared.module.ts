@@ -6,21 +6,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+
+
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent
+  ],
+  exports:[
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule,
-  ],
-  exports: [
-    HeaderComponent,
-    FooterComponent
+    RouterModule
   ]
 })
 export class SharedModule { }

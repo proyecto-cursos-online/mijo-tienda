@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'mijo-cursos-online'`, () => {
+  it(`should have as title 'corsos_line'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('mijo-cursos-online');
+    expect(app.title).toEqual('corsos_line');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('mijo-cursos-online app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('corsos_line app is running!');
   });
 });

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mijo-cursos-online": {
+    "corsos_line": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mijo-cursos-online",
+            "outputPath": "dist/corsos_line",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -51,28 +51,22 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "options": {
-            "port": 4000
+            "port": 5000
           },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mijo-cursos-online:build:production"
+              "browserTarget": "corsos_line:build:production"
             },
             "development": {
-              "browserTarget": "mijo-cursos-online:build:development"
+              "browserTarget": "corsos_line:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mijo-cursos-online:build"
+            "browserTarget": "corsos_line:build"
           }
         },
         "test": {
