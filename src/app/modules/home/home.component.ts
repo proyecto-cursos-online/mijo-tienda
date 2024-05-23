@@ -36,11 +36,11 @@ export class HomeComponent implements OnInit {
       this.desconut_baner = resp.desconut_baner;
       this.discount_banner_course = resp.discount_banner_course;
       this.desconut_flash = resp.desconut_flash;
-      this.desconut_flash_course=resp.desconut_flash_course
+      this.desconut_flash_course = resp.desconut_flash_course
       setTimeout(() => {
         banner_home();
         countdownT();
-      }, 50)
+      }, 100)
     })
   }
 
@@ -50,6 +50,12 @@ export class HomeComponent implements OnInit {
     } else {
       return course.precio_usd - desconut_baner.discount;
     }
+  }
+  getTotalPriceCourse(course:any){
 
+    if (course.discount_g) {
+      return this.getNewTotal(course, course.discount_g);
+    }
+    return course.precio_usd
   }
 }

@@ -10,6 +10,11 @@ const routes: Routes = [
   },
   {
     path: '',
+    //canActivate:[AuthGuard],
+    loadChildren: () => import("./modules/tienda-guest/tienda-guest.module").then(m =>m.TiendaGuestModule),
+  },
+  {
+    path: '',
     loadChildren: () => import("./modules/auth/auth.module").then(m =>m.AuthModule),
   },
   {

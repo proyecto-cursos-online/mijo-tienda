@@ -46,7 +46,8 @@
                                     <div class="swiper-slide">
                                         <div class="rbt-card variation-01 rbt-hover">
                                             <div class="rbt-card-img">
-                                                <a href="course-details.html">
+                                                <a [routerLink]="['landing-curso/',descourse.slug]"
+                                                    [queryParams]="{'discount_banner': desconut_baner.id}">
                                                     <img [src]="descourse.imagen" alt="Card image">
                                                     <div class="rbt-badge-3 bg-white">
                                                         <span
@@ -66,7 +67,8 @@
                                                     <li><i class="feather-play"></i>{{descourse.time_course}}</li>
                                                 </ul>
                                                 <h4 class="rbt-card-title"><a
-                                                        href="course-details.html">{{descourse.title}}</a>
+                                                        [routerLink]="['landing-curso/',descourse.slug] "
+                                                        [queryParams]="{'discount_banner': desconut_baner.id}">{{descourse.title}}</a>
                                                 </h4>
                                                 <p class="rbt-card-text">{{descourse.subtitle}}.</p>
                                                 <div class="rbt-review">
@@ -81,10 +83,13 @@
                                                 </div>
                                                 <div class="rbt-card-bottom">
                                                     <div class="rbt-price">
-                                                        <span class="current-price">{{getNewTotal(descourse,desconut_baner)}} USD</span>
+                                                        <span
+                                                            class="current-price">{{getNewTotal(descourse,desconut_baner)}}
+                                                            USD</span>
                                                         <span class="off-price">${{descourse.precio_usd}}</span>
                                                     </div>
-                                                    <a class="rbt-btn-link" href="course-details.html">Learn More<i
+                                                    <a class="rbt-btn-link"
+                                                        [routerLink]="['landing-curso/',descourse.slug]">Learn More<i
                                                             class="feather-arrow-right"></i></a>
                                                 </div>
                                             </div>
@@ -142,7 +147,8 @@
                         <div class="section-title text-start">
                             <span class="subtitle bg-pink-opacity">Descuento</span>
                             <h2 class="title">Aprovecha el {{desconut_flash.discount}}% menos en estos cursos !</h2>
-                            <p class="description has-medium-font-size mt--20 mb--0">Tiempo limitado del {{desconut_flash.start_date_d}} a  {{desconut_flash.end_date_d}}.</p>
+                            <p class="description has-medium-font-size mt--20 mb--0">Tiempo limitado del
+                                {{desconut_flash.start_date_d}} a {{desconut_flash.end_date_d}}.</p>
                         </div>
                         <div class="countdown-style-1 mt--50 d-flex justify-content-center">
                             <div class="countdown" [attr.data-date]="desconut_flash.end_date" style="">
@@ -171,7 +177,7 @@
                                 <div class="col-md-6 col-sm-12 col-12 py-3">
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img">
-                                            <a href="course-details.html">
+                                            <a [routerLink]="['landing-curso/',course.slug]" [queryParams]="{'discount_banner': desconut_flash.id}">
                                                 <img [src]="course.imagen" alt="Card image">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span
@@ -197,30 +203,33 @@
                                                 </div>
                                                 <div class="rbt-bookmark-btn">
                                                     <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                class="feather-bookmark"></i></a>
+                                                            class="feather-bookmark"></i></a>
                                                 </div>
                                             </div>
-                                            <h4 class="rbt-card-title"><a href="course-details.html">{{course.title}}</a>
+                                            <h4 class="rbt-card-title"><a
+                                                    [routerLink]="['landing-curso/',course.slug]" [queryParams]="{'discount_banner': desconut_flash.id}">{{course.title}}</a>
                                             </h4>
                                             <ul class="rbt-meta">
                                                 <li><i class="feather-book"></i>{{course.count_class}} Clases</li>
                                                 <li><i class="feather-users"></i>40 Students</li>
                                                 <li><i class="feather-play"></i>{{course.time_course}}</li>
                                             </ul>
-    
+
                                             <div class="rbt-card-bottom">
                                                 <div class="rbt-price">
-                                                    <span class="current-price">{{getNewTotal(course,desconut_flash)}} USD</span>
+                                                    <span class="current-price">{{getNewTotal(course,desconut_flash)}}
+                                                        USD</span>
                                                     <span class="off-price">${{course.precio_usd}}</span>
                                                 </div>
-                                                <a class="rbt-btn-link" href="course-details.html">Learn
+                                                <a class="rbt-btn-link"
+                                                    [routerLink]="['landing-curso/',course.slug]">Learn
                                                     More<i class="feather-arrow-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </ng-container>
-                           
+
                             <!-- End Single Course  -->
                         </div>
                     </div>
@@ -228,7 +237,7 @@
             </div>
         </div>
     </div>
-  
+
 
     <!-- Start Course Area -->
     <div class="rbt-course<-area bg-color-extra2 rbt-section-gap">
@@ -247,12 +256,16 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
-                                <a href="course-details.html">
+                                <a [routerLink]="['landing-curso/',course.slug]">
                                     <img [src]="course.imagen" alt="Card image">
-                                    <!-- <div class="rbt-badge-3 bg-white">
-                                        <span>-40%</span>
+                                    <div class="rbt-badge-3 bg-white" *ngIf="course.discount_g">
+                                        <span
+                                            *ngIf="course.discount_g.type_discount == 1">-{{course.discount_g.discount}}%</span>
+                                        <span
+                                            *ngIf="course.discount_g.type_discount == 2">-{{course.discount_g.discount}}
+                                            USD</span>
                                         <span>Off</span>
-                                    </div> -->
+                                    </div>
                                 </a>
                             </div>
                             <div class="rbt-card-body">
@@ -272,7 +285,8 @@
                                                 class="feather-bookmark"></i></a>
                                     </div>
                                 </div>
-                                <h4 class="rbt-card-title"><a href="course-details.html">{{course.title}}</a>
+                                <h4 class="rbt-card-title"><a
+                                        [routerLink]="['landing-curso/',course.slug]">{{course.title}}</a>
                                 </h4>
                                 <ul class="rbt-meta">
                                     <li><i class="feather-book"></i>{{course.count_class}} Clases</li>
@@ -293,10 +307,10 @@
                                 </div>
                                 <div class="rbt-card-bottom">
                                     <div class="rbt-price">
-                                        <span class="current-price">${{course.precio_usd}}</span>
-                                        <!-- <span class="off-price">$120</span> -->
+                                        <span class="current-price">${{getTotalPriceCourse(course)}}</span>
+                                        <span class="off-price" *ngIf="course.discount_g">$ {{course.precio_usd}}</span>
                                     </div>
-                                    <a class="rbt-btn-link left-icon" href="course-details.html"><i
+                                    <a class="rbt-btn-link left-icon" [routerLink]="['landing-curso/',course.slug]"><i
                                             class="feather-shopping-cart"></i> Add To Cart</a>
                                 </div>
                             </div>
@@ -1057,8 +1071,16 @@
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
                                             <div class="rbt-card variation-01 rbt-hover">
                                                 <div class="rbt-card-img">
-                                                    <a href="course-details.html">
+                                                    <a [routerLink]="['landing-curso/',course.slug]">
                                                         <img [src]="course.imagen" alt="Card image">
+                                                        <div class="rbt-badge-3 bg-white" *ngIf="course.discount_g">
+                                                            <span
+                                                                *ngIf="course.discount_g.type_discount == 1">-{{course.discount_g.discount}}%</span>
+                                                            <span
+                                                                *ngIf="course.discount_g.type_discount == 2">-{{course.discount_g.discount}}
+                                                                USD</span>
+                                                            <span>Off</span>
+                                                        </div>
                                                     </a>
                                                 </div>
                                                 <div class="rbt-card-body">
@@ -1079,7 +1101,7 @@
                                                         </div>
                                                     </div>
                                                     <h4 class="rbt-card-title"><a
-                                                            href="course-details.html">{{course.title}}</a>
+                                                            [routerLink]="['landing-curso/',course.slug]">{{course.title}}</a>
                                                     </h4>
                                                     <ul class="rbt-meta">
                                                         <li><i class="feather-book"></i>{{course.count_class}} Clases
@@ -1090,10 +1112,15 @@
 
                                                     <div class="rbt-card-bottom">
                                                         <div class="rbt-price">
-                                                            <span class="current-price">{{ course.precio_usd}}</span>
-                                                            <!-- <span class="off-price">$120</span> -->
+                                                            <div class="rbt-price">
+                                                                <span
+                                                                    class="current-price">${{getTotalPriceCourse(course)}}</span>
+                                                                <span class="off-price" *ngIf="course.discount_g">$
+                                                                    {{course.precio_usd}}</span>
+                                                            </div>
                                                         </div>
-                                                        <a class="rbt-btn-link" href="course-details.html">Learn
+                                                        <a class="rbt-btn-link"
+                                                            [routerLink]="['landing-curso/',course.slug]">Learn
                                                             More<i class="feather-arrow-right"></i></a>
                                                     </div>
                                                 </div>
