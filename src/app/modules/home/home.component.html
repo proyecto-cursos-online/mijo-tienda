@@ -88,9 +88,9 @@
                                                             USD</span>
                                                         <span class="off-price">${{descourse.precio_usd}}</span>
                                                     </div>
-                                                    <a class="rbt-btn-link"
-                                                        [routerLink]="['landing-curso/',descourse.slug]">Learn More<i
-                                                            class="feather-arrow-right"></i></a>
+                                                    <a class="rbt-btn-link" href="#" onclick="return false;" (click)="addCart(descourse,desconut_baner)">
+                                                        <i class="feather-shopping-cart"></i> Add To Cart
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -177,7 +177,8 @@
                                 <div class="col-md-6 col-sm-12 col-12 py-3">
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img">
-                                            <a [routerLink]="['landing-curso/',course.slug]" [queryParams]="{'discount_banner': desconut_flash.id}">
+                                            <a [routerLink]="['landing-curso/',course.slug]"
+                                                [queryParams]="{'discount_banner': desconut_flash.id}">
                                                 <img [src]="course.imagen" alt="Card image">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span
@@ -206,8 +207,8 @@
                                                             class="feather-bookmark"></i></a>
                                                 </div>
                                             </div>
-                                            <h4 class="rbt-card-title"><a
-                                                    [routerLink]="['landing-curso/',course.slug]" [queryParams]="{'discount_banner': desconut_flash.id}">{{course.title}}</a>
+                                            <h4 class="rbt-card-title"><a [routerLink]="['landing-curso/',course.slug]"
+                                                    [queryParams]="{'discount_banner': desconut_flash.id}">{{course.title}}</a>
                                             </h4>
                                             <ul class="rbt-meta">
                                                 <li><i class="feather-book"></i>{{course.count_class}} Clases</li>
@@ -221,9 +222,7 @@
                                                         USD</span>
                                                     <span class="off-price">${{course.precio_usd}}</span>
                                                 </div>
-                                                <a class="rbt-btn-link"
-                                                    [routerLink]="['landing-curso/',course.slug]">Learn
-                                                    More<i class="feather-arrow-right"></i></a>
+                                                <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(course,desconut_flash)"><i class="feather-shopping-cart"></i> Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>
@@ -310,8 +309,7 @@
                                         <span class="current-price">${{getTotalPriceCourse(course)}}</span>
                                         <span class="off-price" *ngIf="course.discount_g">$ {{course.precio_usd}}</span>
                                     </div>
-                                    <a class="rbt-btn-link left-icon" [routerLink]="['landing-curso/',course.slug]"><i
-                                            class="feather-shopping-cart"></i> Add To Cart</a>
+                                    <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(course)"><i class="feather-shopping-cart"></i> Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -1119,9 +1117,7 @@
                                                                     {{course.precio_usd}}</span>
                                                             </div>
                                                         </div>
-                                                        <a class="rbt-btn-link"
-                                                            [routerLink]="['landing-curso/',course.slug]">Learn
-                                                            More<i class="feather-arrow-right"></i></a>
+                                                        <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(course)"><i class="feather-shopping-cart"></i> Add To Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
