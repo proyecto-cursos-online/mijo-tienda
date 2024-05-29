@@ -1058,82 +1058,84 @@
                 </div>
             </div>
             <!-- Start Card Area -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tab-content mt--60" id="rbt-myTabContent">
-                        <ng-container *ngFor="let gcc of group_courses_categories; let i=index">
-                            <div class="tab-pane fade show active" [ngClass]="{'show active':i==0}"
-                                [attr.id]="gcc.name_empty" role="tabpanel" aria-labelledby="all">
-                                <div class="row g-5">
-                                    <ng-container *ngFor="let course of gcc.courses.data">
-                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
-                                            <div class="rbt-card variation-01 rbt-hover">
-                                                <div class="rbt-card-img">
-                                                    <a [routerLink]="['landing-curso/',course.slug]">
-                                                        <img [src]="course.imagen" alt="Card image">
-                                                        <div class="rbt-badge-3 bg-white" *ngIf="course.discount_g">
-                                                            <span
-                                                                *ngIf="course.discount_g.type_discount == 1">-{{course.discount_g.discount}}%</span>
-                                                            <span
-                                                                *ngIf="course.discount_g.type_discount == 2">-{{course.discount_g.discount}}
-                                                                USD</span>
-                                                            <span>Off</span>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="rbt-card-body">
-                                                    <div class="rbt-card-top">
-                                                        <div class="rbt-review">
-                                                            <div class="rating">
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                            </div>
-                                                            <span class="rating-count"> (15 Reviews)</span>
-                                                        </div>
-                                                        <div class="rbt-bookmark-btn">
-                                                            <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                                    class="feather-bookmark"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="rbt-card-title"><a
-                                                            [routerLink]="['landing-curso/',course.slug]">{{course.title}}</a>
-                                                    </h4>
-                                                    <ul class="rbt-meta">
-                                                        <li><i class="feather-book"></i>{{course.count_class}} Clases
-                                                        </li>
-                                                        <li><i class="feather-users"></i>40 Students</li>
-                                                        <li><i class="feather-users"></i>{{course.time_course}}</li>
-                                                    </ul>
+      <div class="row">
+        <div class="col-lg-12">
+            <div class="tab-content mt--60" id="rbt-myTabContent">
 
-                                                    <div class="rbt-card-bottom">
-                                                        <div class="rbt-price">
-                                                            <div class="rbt-price">
-                                                                <span
-                                                                    class="current-price">${{getTotalPriceCourse(course)}}</span>
-                                                                <span class="off-price" *ngIf="course.discount_g">$
-                                                                    {{course.precio_usd}}</span>
-                                                            </div>
-                                                        </div>
-                                                        <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(course)"><i class="feather-shopping-cart"></i> Add To Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ng-container>
+              <ng-container *ngFor="let group_courses_categ of group_courses_categories;let i=index">
+                  <div class="tab-pane fade" [ngClass]="{'show active': i == 0}" [attr.id]="group_courses_categ.name_empty" role="tabpanel" aria-labelledby="all">
+                      <div class="row g-5">
+                          
+                          <ng-container *ngFor="let courses of group_courses_categ.courses.data">
+                              <!-- Start Single Course  -->
+                              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                                  <div class="rbt-card variation-01 rbt-hover">
+                                      <div class="rbt-card-img">
+                                          <a [routerLink]="['landing-curso/',courses.slug]">
+                                              <img [src]="courses.imagen" style="height: 171px;" alt="Card image">
+                                          </a>
+                                          <div class="rbt-badge-3 bg-white" *ngIf="courses.discount_g">
+                                              <span *ngIf="courses.discount_g.type_discount == 1">-{{ courses.discount_g.discount }}%</span>
+                                              <span *ngIf="courses.discount_g.type_discount == 2">-{{ courses.discount_g.discount }} USD</span>
+                                              <span>Off</span>
+                                          </div>
+                                          
+                                      </div>
+                                      <div class="rbt-card-body">
+                                          <div class="rbt-card-top">
+                                              <div class="rbt-review">
+                                                  <div class="rating">
+                                                      <i class="fas fa-star" [ngClass]="{'rating': courses.avg_reviews < 1}"></i>
+                                                      <i class="fas fa-star" [ngClass]="{'rating': courses.avg_reviews < 2}"></i>
+                                                      <i class="fas fa-star" [ngClass]="{'rating': courses.avg_reviews < 3}"></i>
+                                                      <i class="fas fa-star" [ngClass]="{'rating': courses.avg_reviews < 4}"></i>
+                                                      <i class="fas fa-star" [ngClass]="{'rating': courses.avg_reviews < 5}"></i>
+                                                  </div>
+                                                  <span class="rating-count"> ({{ courses.count_reviews }} Reviews)</span>
+                                              </div>
+                                              <div class="rbt-bookmark-btn">
+                                                  <a class="rbt-round-btn" title="Bookmark" href="#"><i
+                                              class="feather-bookmark"></i></a>
+                                              </div>
+                                          </div>
+                                          <h4 class="rbt-card-title"><a [routerLink]="['landing-curso/',courses.slug]">{{ courses.title }}</a>
+                                          </h4>
+                                          <ul class="rbt-meta">
+                                              <li><i class="feather-book"></i>{{ courses.count_class }} Lessons</li>
+                                              <li><i class="feather-users"></i>{{ courses.count_students }} Students</li>
+                                              <li><i class="feather-users"></i>{{ courses.time_course }}</li>
+                                          </ul>
+      
+                                          <div class="rbt-card-bottom">
+                                              <!-- <div class="rbt-price">
+                                                  <span class="current-price">{{ courses.precio_usd }} USD</span>
+                                                  <span class="off-price">$120</span>
+                                              </div> -->
+                                              <div class="rbt-price">
+                                                  <span class="current-price">{{ getTotalPriceCourse(courses) }} USD</span>
+                                                  <span class="off-price" *ngIf="courses.discount_g">{{ courses.precio_usd }}</span>
+                                              </div>
+                                              <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(courses)"><i class="feather-shopping-cart"></i> Add To Cart</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- End Single Course  -->
+                          </ng-container>
+                          
+  
+                      </div>
+                  </div>
+              </ng-container>
+              
 
-                                </div>
-                            </div>
-                        </ng-container>
-
-                    </div>
-                </div>
+              
             </div>
         </div>
     </div>
-    <!-- End Course Area  -->
+</div>
+</div>
+<!-- End Course Area  -->
 
 
     <!-- End Event Area  -->
