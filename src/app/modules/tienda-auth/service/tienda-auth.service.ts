@@ -36,4 +36,10 @@ export class TiendaAuthService {
     let URL = URL_SERVICES+"/ecommerce/update_client";
     return this.http.post(URL,data,{headers: headers});
   }
+
+  showCourse(slug:any){
+    let headers = new HttpHeaders({'Authorization': 'Bearer '+this.authService.token});
+    let URL = URL_SERVICES+"/ecommerce/course_leason/"+slug;
+    return this.http.get(URL,{headers: headers});
+  }
 }

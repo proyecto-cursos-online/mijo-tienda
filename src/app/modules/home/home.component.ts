@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
       setTimeout(() => {
         banner_home();
         countdownT();
-      }, 100)
+      }, 50)
     })
     this.user = this.cartService.authService.user;
   }
