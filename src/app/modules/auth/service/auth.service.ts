@@ -51,6 +51,6 @@ export class AuthService {
   logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    location.href = URL_FROTEND+"/login";
+    location.href = URL_FROTEND+"/auth/login";
    }
 }

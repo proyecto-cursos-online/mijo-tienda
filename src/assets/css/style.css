@@ -124,7 +124,7 @@
   --color-coral: #E9967A;
   --color-violet: #e78503;
   --color-pink: #DB7093;
-  --color-heading: #192335;
+  --color-heading: #352819;
   --color-body: #6b7385;
   --color-white: #ffffff;
   --color-white-off: #FFFFFFAB;
@@ -140,10 +140,10 @@
   --color-light: #F5F7FA;
   --color-lighter: #F2F5F9;
   --primary-opacity: #2f57ef21;
-  --secondary-opacity: #b966e721;
+  --secondary-opacity: #e7c56621;
   --coral-opacity: #E9967A21;
-  --violet-opacity: #80008021;
-  --pink-opacity: #DB709321;
+  --violet-opacity: #805e0021;
+  --pink-opacity: #dbb67021;
 
 
 
@@ -151,13 +151,13 @@
 
 
   
-  --danger-opacity: #FF000310;
+  --danger-opacity: #ff7b0010;
   --warning-opacity: #FF8F3C10;
   --success-opacity: #3EB75E10;
   --black-opacity: rgba(0, 0, 0, 0.04);
-  --heading-opacity: #19233550;
+  --heading-opacity: #352b1950;
   --color-card-1: #fffccf;
-  --color-card-2: #ffedff;
+  --color-card-2: #fffbed;
   --color-card-3: #ffe8eb;
   --color-card-4: #e9f6ff;
   --color-card-5: #f3b73c;
@@ -173,18 +173,18 @@
   --color-extra: rgb(249, 249, 255);
   --color-extra2: #F9F9FF;
   --color-border: #e6e3f1;
-  --color-border-2: #e6e3f14f;
+  --color-border-2: #f1eae34f;
   --color-badge-1: #303F5B;
   --color-badge-2: #F2C94C;
-  --color-facebook: #3B5997;
-  --color-twitter: #1BA1F2;
+  --color-facebook: #97863b;
+  --color-twitter: #f2831b;
   --color-youtube: #ED4141;
   --color-linkedin: #0077B5;
-  --color-pinterest: #E60022;
-  --color-instagram: #C231A1;
+  --color-pinterest: #e66800;
+  --color-instagram: #c2a031;
   --color-vimeo: #00ADEF;
-  --color-twitch: #6441A3;
-  --color-discord: #7289da;
+  --color-twitch: #a38441;
+  --color-discord: #daad72;
   --radius-10: 10px;
   --radius-big: 16px;
   --radius-small: 6px;
@@ -200,15 +200,15 @@
   --shadow-primary: 0px 4px 10px rgba(37, 47, 63, 0.1);
   --shadow-light: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
   --shadow-dark: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
-  --shadow-1: 0px 6px 34px rgba(215, 216, 222, 0.41);
+  --shadow-1: 0px 6px 34px rgba(222, 220, 215, 0.41);
   --shadow-slide-item: 0px 0 10px 0 rgba(215, 216, 222, 0.20);
   --shadow-2: 0 15px 34px 0 rgba(175, 181, 204, 0.32);
   --shadow-3: 0 5px 15px 0 rgba(85, 74, 101, 0.37);
   --shadow-5: 0px 20px 70px 0px rgba(0, 0, 0, 0.1);
   --shadow-7: 0px 15px 30px -2px rgba(0, 0, 0, 0.1);
   --shadow-8: -5px 18px 60px 0 rgba(210, 210, 234, 0.4);
-  --shadow-9: 0 13px 48px 0 rgba(215, 216, 222, 0.44);
-  --shadow-10: 0 13px 14px 0 rgba(129, 104, 145, 0.05);
+  --shadow-9: 0 13px 48px 0 rgba(222, 219, 215, 0.44);
+  --shadow-10: 0 13px 14px 0 rgba(145, 132, 104, 0.05);
   --shadow-11: 0 0 10px 0 rgba(0, 0, 0, 0.06);
   --transition: 0.3s;
   --transition-2: 256ms ease-in-out;
@@ -233,15 +233,15 @@
   --h6: 16px;
   --div-gap-1: 10px;
   --gradient-1: linear-gradient(rgb(255, 255, 255) 0%, rgb(239, 241, 255) 100%);
-  --gradient-4: linear-gradient(180deg,#fff,#f6f9ff);
+  --gradient-4: linear-gradient(180deg,#fff,#fffcf6);
   --gradient-2: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(240, 242, 255) 100%);
-  --gradient-3: linear-gradient(90deg, #f7f768 0%, #FEFFB3 100%);
+  --gradient-3: linear-gradient(90deg, #F1D379 0%, #EABD45 100%);
   --gradient-4: linear-gradient(180deg, #EFF1FF 0%, #FFFFFF 100%);
   --gradient-5: linear-gradient(rgb(239, 241, 255) 0%, rgb(239, 241, 255) 100%);
-  --gradient-6: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(251, 199, 226, 0.15), rgba(220, 217, 254, 0.15));
+  --gradient-6: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(251, 246, 199, 0.15), rgba(254, 247, 217, 0.15));
   --gradient-7: linear-gradient(218.15deg, var(--color-secondary) 0%, var(--color-primary) 100%);
-  --gradient-8: linear-gradient(270deg, #9e77ff 0%, #4460ff 100%);
-  --gradient-9: linear-gradient(180deg, #6827FF 0%, #E3F0FF 100%);
+  --gradient-8: linear-gradient(270deg, #ffcf77 0%, #ffc444 100%);
+  --gradient-9: linear-gradient(180deg, #ffb327 0%, #E3F0FF 100%);
 }
 
 /**
@@ -8189,7 +8189,7 @@ textarea:-ms-input-placeholder {
 }
 
 .rbt-gradient-border {
-  background: linear-gradient(-145deg, #CFA2E8, #637FEA) !important;
+  background: linear-gradient(-145deg, #e8dba2, #eab463) !important;
   z-index: 10;
 }
 .rbt-gradient-border::before {
@@ -26208,7 +26208,7 @@ Course Sidebar
   text-align: center;
 }
 .course-sidebar .social-share-wrapper {
-  background: #f5f5fa;
+  background: #faf8f5;
   margin: 0 -27px -27px;
   padding: 30px;
   border-radius: 0 0 6px 6px;
