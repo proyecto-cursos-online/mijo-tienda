@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
+import { state } from '@angular/animations';
 
 declare function _clickDoc(): any;
 @Component({
@@ -55,6 +56,9 @@ export class LoginComponent implements OnInit {
       name: this.name,
       surname: this.surname,
       password: this.password_register,
+      role_id: "2",
+      state:"1",
+      type_user:"1"
     }
     this.authService.register(data).subscribe((resp: any) => {
       console.log(resp);
