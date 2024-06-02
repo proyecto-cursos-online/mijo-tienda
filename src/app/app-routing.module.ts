@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './modules/auth/service/auth.guard';
 
@@ -19,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import("./modules/tienda-auth/tienda-auth.module").then(m => m.TiendaAuthModule),
   },                                  
   {
-    path: '',
+    path: 'auth',
     loadChildren: () => import("./modules/auth/auth.module").then(m =>m.AuthModule),
   },
   {
@@ -34,7 +35,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [],
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
+  exports: [
+    RouterModule,
+  ]
 })
 export class AppRoutingModule { }
