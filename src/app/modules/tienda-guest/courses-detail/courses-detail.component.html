@@ -59,11 +59,11 @@
                         </div>
 
                         <div class="feature-sin total-rating">
-                            <a class="rbt-badge-4" href="#">{{ LANDING_COURSE.avg_reviews }} rating</a>
+                            <a class="rbt-badge-4" href="#">{{ LANDING_COURSE.avg_reviews }} Calificación</a>
                         </div>
 
                         <div class="feature-sin total-student">
-                            <span>{{ LANDING_COURSE.count_students }} students</span>
+                            <span>{{ LANDING_COURSE.count_students }} Estudiantes</span>
                         </div>
 
                     </div>
@@ -106,13 +106,13 @@
                         <nav class="mainmenu-nav onepagenav">
                             <ul class="mainmenu">
                                 <li class="current">
-                                    <a href="#overview">Overview</a>
+                                    <a href="#overview">S</a>
                                 </li>
                                 <li>
-                                    <a href="#coursecontent">Course Content</a>
+                                    <a href="#coursecontent">Contenido del Curso</a>
                                 </li>
                                 <li>
-                                    <a href="#details">Details</a>
+                                    <a href="#details">Detalles</a>
                                 </li>
                                 <li>
                                     <a href="#intructor">Intructor</a>
@@ -139,7 +139,7 @@
                     <div class="course-content rbt-shadow-box coursecontent-wrapper mt--30" id="coursecontent">
                         <div class="rbt-course-feature-inner">
                             <div class="section-title">
-                                <h4 class="rbt-title-style-3">Course Content</h4>
+                                <h4 class="rbt-title-style-3">Contenido del Curso</h4>
                             </div>
                             <div class="rbt-accordion-style rbt-accordion-02 accordion">
                                 <div class="accordion" id="accordionExampleb2">
@@ -195,7 +195,7 @@
                             <!-- Start Feture Box  -->
                             <div class="col-lg-6">
                                 <div class="section-title">
-                                    <h4 class="rbt-title-style-3 mb--20">Requirements</h4>
+                                    <h4 class="rbt-title-style-3 mb--20">Requerimientos</h4>
                                 </div>
                                 <ul class="rbt-list-style-1">
                                     <ng-container *ngFor="let requirement of LANDING_COURSE.requirements">
@@ -245,8 +245,8 @@
                                         <span class="b3 subtitle">{{ LANDING_COURSE.instructor.profesion }}</span>
                                         <ul class="rbt-meta mb--20 mt--10">
                                             <li><i class="fa fa-star color-warning"></i>{{ LANDING_COURSE.instructor.count_reviews }} Reviews <span class="rbt-badge-5 ml--5">{{ LANDING_COURSE.instructor.avg_reviews }} Rating</span></li>
-                                            <li><i class="feather-users"></i>{{ LANDING_COURSE.instructor.count_students }} Students</li>
-                                            <li><a href="#"><i class="feather-video"></i>{{ LANDING_COURSE.instructor.courses_count }} Courses</a></li>
+                                            <li><i class="feather-users"></i>{{ LANDING_COURSE.instructor.count_students }} Estudiantes</li>
+                                            <li><a href="#"><i class="feather-video"></i>{{ LANDING_COURSE.instructor.courses_count }} Cursos</a></li>
                                         </ul>
                                     </div>
                                     <div class="content">
@@ -485,25 +485,26 @@
                             
 
                         </div>
-                        <div class="rbt-show-more-btn">Show More</div>
+                        <div class="rbt-show-more-btn">Ver más..</div>
                     </div>
                 </div>
                 <div class="related-course mt--60">
                     <div class="row g-5 align-items-end mb--40">
                         <div class="col-lg-8 col-md-8 col-12">
                             <div class="section-title">
-                                <span class="subtitle bg-pink-opacity">Top Course</span>
+                                <span class="subtitle bg-pink-opacity">Top Cursos</span>
                                 <h4 class="title">Mas Coursos Dirijidos por <strong class="color-primary">{{
                                         LANDING_COURSE.instructor.full_name }}</strong></h4>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="read-more-btn text-start text-md-end">
-                                <a class="rbt-btn rbt-switch-btn btn-border btn-sm" href="#">
-                                    <span data-text="View All Course">View All Course</span>
+                                <a class="rbt-btn rbt-switch-btn btn-border btn-sm" href="/listado-de-cursos">
+                                    <span data-text="Ver todo los cursos">Ver todo los cursos</span>
                                 </a>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="row g-5">
                         <ng-container *ngFor="let COURSE of courses_related_instructor">
@@ -526,25 +527,23 @@
                                         <div class="rbt-card-top">
                                             <div class="rbt-review">
                                                 <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 1}"></i>
+                                                    <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 2}"></i>
+                                                    <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 3}"></i>
+                                                    <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 4}"></i>
+                                                    <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 5}"></i>
                                                 </div>
-                                                <span class="rating-count"> (15 Reviews)</span>
+                                                <span class="rating-count"> ({{ COURSE.count_reviews }} Reviews)</span>
                                             </div>
                                             <div class="rbt-bookmark-btn">
-                                                <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                        class="feather-bookmark"></i></a>
+                                                <a class="rbt-round-btn" title="Bookmark" href="#"><i class="feather-bookmark"></i></a>
                                             </div>
                                         </div>
-                                        <h4 class="rbt-card-title"><a [attr.href]="'landing-curso/'+COURSE.slug">{{
-                                                COURSE.title }}</a>
+                                        <h4 class="rbt-card-title"><a [attr.href]="'landing-curso/'+COURSE.slug">{{ COURSE.title }}</a>
                                         </h4>
                                         <ul class="rbt-meta">
                                             <li><i class="feather-book"></i>{{ COURSE.count_class }} Lessons</li>
-                                            <li><i class="feather-users"></i>50 Students</li>
+                                            <li><i class="feather-users"></i>{{ COURSE.count_students }} Students</li>
                                             <li><i class="feather-play"></i>{{ COURSE.time_course }}</li>
                                         </ul>
                                         <p class="rbt-card-text">{{ COURSE.subtitle }}.</p>
@@ -555,19 +554,15 @@
                                                 </a>
                                             </div>
                                             <div class="rbt-author-info">
-                                                By <a href="profile.html">{{ COURSE.instructor.full_name }}</a> In <a
-                                                    href="#">{{ COURSE.instructor.profesion }}</a>
+                                                By <a href="profile.html">{{ COURSE.instructor.full_name }}</a> In <a href="#">{{ COURSE.instructor.profesion }}</a>
                                             </div>
                                         </div>
                                         <div class="rbt-card-bottom">
                                             <div class="rbt-price">
                                                 <span class="current-price">{{ getTotalPriceCourse(COURSE) }} USD</span>
-                                                <span class="off-price" *ngIf="COURSE.discount_g">{{ COURSE.precio_usd
-                                                    }}</span>
+                                                <span class="off-price" *ngIf="COURSE.discount_g">{{ COURSE.precio_usd }}</span>
                                             </div>
-                                            <a class="rbt-btn-link left-icon"
-                                                [attr.href]="'landing-curso/'+COURSE.slug"><i
-                                                    class="feather-shopping-cart"></i> Agregar al carrito</a>
+                                            <a class="rbt-btn-link left-icon" [attr.href]="'landing-curso/'+COURSE.slug"><i class="feather-shopping-cart"></i> Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
@@ -681,8 +676,8 @@
                                 </div>
                                 <hr class="mt--20">
                                 <div class="contact-with-us text-center">
-                                    <p>For details about the course</p>
-                                    <p class="rbt-badge-2 mt--10 justify-content-center w-100"><i class="feather-phone mr--5"></i> Call Us: <a href="#"><strong>+444 555 666 777</strong></a></p>
+                                    <p>Para detalles sobre el curso</p>
+                                    <p class="rbt-badge-2 mt--10 justify-content-center w-100"><i class="feather-phone mr--5"></i> Llámanos: <a href="#"><strong>+444 555 666 777</strong></a></p>
                                 </div>
                             </div>
                     </div>
@@ -701,8 +696,8 @@
 <div class="rbt-related-course-area bg-color-white pt--60 rbt-section-gapBottom">
     <div class="container">
         <div class="section-title mb--30">
-            <span class="subtitle bg-primary-opacity">More Similar Courses</span>
-            <h4 class="title">Related Courses</h4>
+            <span class="subtitle bg-primary-opacity">Más cursos similares..</span>
+            <h4 class="title">Cursos relacionados</h4>
         </div>
         <div class="row g-5">
 
@@ -726,25 +721,23 @@
                             <div class="rbt-card-top">
                                 <div class="rbt-review">
                                     <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 1}"></i>
+                                        <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 2}"></i>
+                                        <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 3}"></i>
+                                        <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 4}"></i>
+                                        <i class="fas fa-star" [ngClass]="{'rating': COURSE.avg_reviews < 5}"></i>
                                     </div>
-                                    <span class="rating-count"> (15 Reviews)</span>
+                                    <span class="rating-count"> ({{ COURSE.count_reviews }} Reviews)</span>
                                 </div>
                                 <div class="rbt-bookmark-btn">
-                                    <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                            class="feather-bookmark"></i></a>
+                                    <a class="rbt-round-btn" title="Bookmark" href="#"><i class="feather-bookmark"></i></a>
                                 </div>
                             </div>
-                            <h4 class="rbt-card-title"><a [attr.href]="'landing-curso/'+COURSE.slug">{{ COURSE.title
-                                    }}</a>
+                            <h4 class="rbt-card-title"><a [attr.href]="'landing-curso/'+COURSE.slug">{{ COURSE.title }}</a>
                             </h4>
                             <ul class="rbt-meta">
                                 <li><i class="feather-book"></i>{{ COURSE.count_class }} Lessons</li>
-                                <li><i class="feather-users"></i>50 Students</li>
+                                <li><i class="feather-users"></i>{{ COURSE.count_students }} Students</li>
                                 <li><i class="feather-play"></i>{{ COURSE.time_course }}</li>
                             </ul>
                             <p class="rbt-card-text">{{ COURSE.subtitle }}.</p>
@@ -755,8 +748,7 @@
                                     </a>
                                 </div>
                                 <div class="rbt-author-info">
-                                    By <a href="profile.html">{{ COURSE.instructor.full_name }}</a> In <a href="#">{{
-                                        COURSE.instructor.profesion }}</a>
+                                    By <a href="profile.html">{{ COURSE.instructor.full_name }}</a> In <a href="#">{{ COURSE.instructor.profesion }}</a>
                                 </div>
                             </div>
                             <div class="rbt-card-bottom">
@@ -764,8 +756,7 @@
                                     <span class="current-price">{{ getTotalPriceCourse(COURSE) }} USD</span>
                                     <span class="off-price" *ngIf="COURSE.discount_g">{{ COURSE.precio_usd }}</span>
                                 </div>
-                                <a class="rbt-btn-link left-icon" [attr.href]="'landing-curso/'+COURSE.slug"><i
-                                        class="feather-shopping-cart"></i> Add To Cart</a>
+                                <a class="rbt-btn-link left-icon" [attr.href]="'landing-curso/'+COURSE.slug"><i class="feather-shopping-cart"></i> Add To Cart</a>
                             </div>
                         </div>
                     </div>
