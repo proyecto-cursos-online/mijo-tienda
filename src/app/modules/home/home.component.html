@@ -54,15 +54,15 @@
                                                             *ngIf="desconut_baner.type_discount == 1">-{{desconut_baner.discount}}%</span>
                                                         <span
                                                             *ngIf="desconut_baner.type_discount == 2">-{{desconut_baner.discount}}
-                                                            usd</span>
-                                                        <span>Off</span>
+                                                            PEN</span>
+                                                        <span>Descuento</span>
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="rbt-card-body">
                                                 <ul class="rbt-meta">
-                                                    <li><i class="feather-book"></i>{{descourse.count_class }} Lessons</li>
-                                                    <li><i class="feather-users"></i>{{ descourse.count_students }} Students</li>
+                                                    <li><i class="feather-book"></i>{{descourse.count_class }} Lecciones</li>
+                                                    <li><i class="feather-users"></i>{{ descourse.count_students }} Estudiantes</li>
                                                     <li><i class="feather-play"></i>{{ descourse.time_course }}</li>
                                                 </ul>
                                                 <h4 class="rbt-card-title"><a
@@ -78,17 +78,17 @@
                                                         <i class="fas fa-star" [ngClass]="{'rating': descourse.avg_reviews < 4}"></i>
                                                         <i class="fas fa-star" [ngClass]="{'rating': descourse.avg_reviews < 5}"></i>
                                                     </div>
-                                                    <span class="rating-count"> ({{ descourse.count_reviews }} Reviews)</span>
+                                                    <span class="rating-count"> ({{ descourse.count_reviews }} Reseñas)</span>
                                                 </div>
                                                 <div class="rbt-card-bottom">
                                                     <div class="rbt-price">
                                                         <span
                                                             class="current-price">{{getNewTotal(descourse,desconut_baner)}}
-                                                            USD</span>
+                                                            PEN</span>
                                                         <span class="off-price">${{descourse.precio_usd}}</span>
                                                     </div>
                                                     <a class="rbt-btn-link" href="#" onclick="return false;" (click)="addCart(descourse,desconut_baner)">
-                                                        <i class="feather-shopping-cart"></i> Add To Cart
+                                                        <i class="feather-shopping-cart"></i> Añadir a la cesta
                                                     </a>
                                                 </div>
                                             </div>
@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
-                        <span class="subtitle bg-primary-opacity">CATEGORIES</span>
+                        <span class="subtitle bg-primary-opacity">CATEGORIAS</span>
                         <h2 class="title">Explora las principales categorías de cursos<br /> Que te cambie a ti mismo </h2>
                     </div>
                 </div>
@@ -156,19 +156,19 @@
                             <div class="countdown" [attr.data-date]="desconut_flash.end_date" style="">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">Days</span>
+                                    <span class="countdown-heading">Días</span>
                                 </div>
                                 <div class="countdown-container hours">
                                     <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">Hours</span>
+                                    <span class="countdown-heading">Horas</span>
                                 </div>
                                 <div class="countdown-container minutes">
                                     <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Minutes</span>
+                                    <span class="countdown-heading">Minutos</span>
                                 </div>
                                 <div class="countdown-container seconds">
                                     <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Seconds</span>
+                                    <span class="countdown-heading">Segundos</span>
                                 </div>
                             </div>
                         </div>
@@ -187,8 +187,8 @@
                                                         *ngIf="desconut_flash.type_discount == 1">-{{desconut_flash.discount}}%</span>
                                                     <span
                                                         *ngIf="desconut_flash.type_discount == 2">-{{desconut_flash.discount}}
-                                                        usd</span>
-                                                    <span>Off</span>
+                                                        PEN</span>
+                                                    <span>Descuento</span>
                                                 </div>
                                             </a>
                                         </div>
@@ -202,7 +202,7 @@
                                                         <i class="fas fa-star" [ngClass]="{'rating': descourse.avg_reviews < 4}"></i>
                                                         <i class="fas fa-star" [ngClass]="{'rating': descourse.avg_reviews < 5}"></i>
                                                     </div>
-                                                    <span class="rating-count"> ({{ descourse.count_reviews }} Reviews)</span>
+                                                    <span class="rating-count"> ({{ descourse.count_reviews }} Reseñas)</span>
                                                 </div>
                                                 
                                                 <div class="rbt-bookmark-btn">
@@ -214,18 +214,18 @@
                                                     [queryParams]="{'discount_banner': desconut_flash.id}">{{descourse.title}}</a>
                                             </h4>
                                             <ul class="rbt-meta">
-                                                <li><i class="feather-book"></i>{{ descourse.count_class }} Lessons</li>
-                                                <li><i class="feather-users"></i>{{ descourse.count_students }} Students</li>
+                                                <li><i class="feather-book"></i>{{ descourse.count_class }} Lecciónes</li>
+                                                <li><i class="feather-users"></i>{{ descourse.count_students }} Estudiantes</li>
                                                 <li><i class="feather-users"></i>{{ descourse.time_course }}</li>
                                             </ul>
 
                                             <div class="rbt-card-bottom">
                                                 <div class="rbt-price">
                                                     <span class="current-price">{{getNewTotal(descourse,desconut_flash)}}
-                                                        USD</span>
+                                                        PEN</span>
                                                     <span class="off-price">${{descourse.precio_usd}}</span>
                                                 </div>
-                                                <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(descourse,desconut_flash)"><i class="feather-shopping-cart"></i> Add To Cart</a>
+                                                <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(descourse,desconut_flash)"><i class="feather-shopping-cart"></i> Añadir a la cesta</a>
                                             </div>
                                         </div>
                                     </div>
@@ -265,7 +265,7 @@
                                             *ngIf="descourse.discount_g.type_discount == 1">-{{descourse.discount_g.discount}}%</span>
                                         <span
                                             *ngIf="descourse.discount_g.type_discount == 2">-{{descourse.discount_g.discount}}
-                                            USD</span>
+                                            PEN</span>
                                         <span>Off</span>
                                     </div>
                                 </a>
@@ -280,7 +280,7 @@
                                             <i class="fas fa-star" [ngClass]="{'rating': descourse.avg_reviews < 4}"></i>
                                             <i class="fas fa-star" [ngClass]="{'rating': descourse.avg_reviews < 5}"></i>
                                         </div>
-                                        <span class="rating-count"> ({{ descourse.count_reviews }} Reviews)</span>
+                                        <span class="rating-count"> ({{ descourse.count_reviews }} Reseñas)</span>
                                     </div>
                                     <div class="rbt-bookmark-btn">
                                         <a class="rbt-round-btn" title="Bookmark" href="#"><i
@@ -291,8 +291,8 @@
                                         [routerLink]="['landing-curso/',descourse.slug]">{{descourse.title}}</a>
                                 </h4>
                                 <ul class="rbt-meta">
-                                    <li><i class="feather-book"></i>{{ descourse.count_class }} Lessons</li>
-                                    <li><i class="feather-users"></i>{{ descourse.count_students }} Students</li>
+                                    <li><i class="feather-book"></i>{{ descourse.count_class }} Lecciónes</li>
+                                    <li><i class="feather-users"></i>{{ descourse.count_students }} Estudiantes</li>
                                     <li><i class="feather-play"></i>{{ descourse.time_course }}</li>
                                 </ul>
                                 <p class="rbt-card-text">{{descourse.subtitle}}</p>
@@ -303,7 +303,7 @@
                                         </a>
                                     </div>
                                     <div class="rbt-author-info">
-                                        By <a href="profile.html">{{descourse.instructor?.full_name}}</a> In <a
+                                        Por <a href="profile.html">{{descourse.instructor?.full_name}}</a> Especialista en <a
                                             href="#">{{descourse.instructor?.profesion}}</a>
                                     </div>
                                 </div>
@@ -312,7 +312,7 @@
                                         <span class="current-price">${{getTotalPriceCourse(descourse)}}</span>
                                         <span class="off-price" *ngIf="descourse.discount_g">$ {{descourse.precio_usd}}</span>
                                     </div>
-                                    <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(descourse)"><i class="feather-shopping-cart"></i> Add To Cart</a>
+                                    <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(descourse)"><i class="feather-shopping-cart"></i> Añadir a la cesta</a>
                                 </div>
                             </div>
                         </div>
@@ -381,9 +381,9 @@
                                     <i class="feather-heart"></i>
                                 </div>
                                 <div class="feature-content">
-                                    <h6 class="feature-title">Flexible Classes</h6>
-                                    <p class="feature-description">It is a long established fact that a reader will
-                                        be distracted by this on readable content of when looking at its layout.</p>
+                                    <h6 class="feature-title">Clases flexibles</h6>
+                                    <p class="feature-description">Nuestras clases flexibles se adaptan a tu horario
+                                         y estilo de vida. Elige cuándo y cómo aprender, sin restricciones de tiempo.</p>
                                 </div>
                             </div>
 
@@ -392,9 +392,9 @@
                                     <i class="feather-book"></i>
                                 </div>
                                 <div class="feature-content">
-                                    <h6 class="feature-title">Learn From Anywhere</h6>
-                                    <p class="feature-description">Sed distinctio repudiandae eos recusandae laborum
-                                        eaque non eius iure suscipit laborum eaque non eius iure suscipit.</p>
+                                    <h6 class="feature-title">Aprenda desde cualquier lugar</h6>
+                                    <p class="feature-description">Con nuestra plataforma de aprendizaje en línea, 
+                                        tienes la libertad de estudiar cuando y donde quieras. Disfruta de clases interactivas y recursos accesibles en cualquier dispositivo.</p>
                                 </div>
                             </div>
                         </div>
@@ -426,10 +426,10 @@
                             <div class="col-lg-12 col-xl-5">
                                 <div class="inner">
                                     <div class="rbt-category mb--20">
-                                        <a href="#">New Collection</a>
+                                        <a href="#">Nueva colección</a>
                                     </div>
-                                    <h4 class="title mb--15">Online Courses from Histudy</h4>
-                                    <p class="mb--15">Top instructors from around the world</p>
+                                    <h4 class="title mb--15">Cursos en línea de Mijo Schooly</h4>
+                                    <p class="mb--15">Los mejores instructores de todo el mundo.</p>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-xl-7">
@@ -453,11 +453,11 @@
                                     <div class="rbt-category mb--20">
                                         <a href="#">Top Teacher</a>
                                     </div>
-                                    <h4 class="title mb--10">Free Online Courses from Histudy School To Education</h4>
-                                    <p class="mb--15">Top instructors from around the world</p>
+                                    <h4 class="title mb--10">Cursos en línea gratuitos de Histudy School To Education</h4>
+                                    <p class="mb--15">Los mejores instructores de todo el mundo.</p>
                                     <div class="read-more-btn">
                                         <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm" href="/auth/login">
-                                            <span data-text="Join Now">Join Now</span>
+                                            <span data-text="Join Now">Unete ahora</span>
                                         </a>
                                     </div>
                                     
@@ -477,7 +477,7 @@
             <div class="row mb--60">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
-                        <span class="subtitle bg-primary-opacity">Why Choose Us</span>
+                        <span class="subtitle bg-primary-opacity">POR QUÉ ELEGIRNOS</span>
                         <h2 class="title">Creando una comunidad <br /> de estudiantes de por vida.</h2>
                     </div>
                 </div>
@@ -1083,7 +1083,7 @@
                                           </a>
                                           <div class="rbt-badge-3 bg-white" *ngIf="courses.discount_g">
                                               <span *ngIf="courses.discount_g.type_discount == 1">-{{ courses.discount_g.discount }}%</span>
-                                              <span *ngIf="courses.discount_g.type_discount == 2">-{{ courses.discount_g.discount }} USD</span>
+                                              <span *ngIf="courses.discount_g.type_discount == 2">-{{ courses.discount_g.discount }} PEN</span>
                                               <span>Off</span>
                                           </div>
                                           
@@ -1108,8 +1108,8 @@
                                           <h4 class="rbt-card-title"><a [routerLink]="['landing-curso/',courses.slug]">{{ courses.title }}</a>
                                           </h4>
                                           <ul class="rbt-meta">
-                                              <li><i class="feather-book"></i>{{ courses.count_class }} Lessons</li>
-                                              <li><i class="feather-users"></i>{{ courses.count_students }} Students</li>
+                                              <li><i class="feather-book"></i>{{ courses.count_class }} Lecciónes</li>
+                                              <li><i class="feather-users"></i>{{ courses.count_students }} Estudiantes</li>
                                               <li><i class="feather-users"></i>{{ courses.time_course }}</li>
                                           </ul>
       
@@ -1119,10 +1119,10 @@
                                                   <span class="off-price">$120</span>
                                               </div> -->
                                               <div class="rbt-price">
-                                                  <span class="current-price">{{ getTotalPriceCourse(courses) }} USD</span>
+                                                  <span class="current-price">{{ getTotalPriceCourse(courses) }} PEN</span>
                                                   <span class="off-price" *ngIf="courses.discount_g">{{ courses.precio_usd }}</span>
                                               </div>
-                                              <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(courses)"><i class="feather-shopping-cart"></i> Add To Cart</a>
+                                              <a class="rbt-btn-link left-icon" href="#" onclick="return false;" (click)="addCart(courses)"><i class="feather-shopping-cart"></i> Añadir a la cesta</a>
                                           </div>
                                       </div>
                                   </div>
@@ -1643,12 +1643,10 @@
                     <div class="inner text-center">
                         <div class="section-title text-center">
                             <span class="subtitle bg-white-opacity">Obtenga la última actualización de su estudio</span>
-                            <h2 class="title color-white"><strong>Suscribir</strong> Nuestro boletín</h2>
-                            <p class="description color-white mt--20">Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Ipsam explicabo sit est eos earum reprehenderit inventore nam autem
-                                corrupti rerum!</p>
+                            <h2 class="title color-white"><strong>¡Únete a </strong>nuestro boletín!</h2>
+                            <p class="description color-white mt--20">Recibe las últimas noticias, actualizaciones y ofertas especiales directamente en tu bandeja de entrada. ¡No te pierdas ninguna novedad!</p>
                         </div>
-                        <form action="#" class="newsletter-form-1 mt--40">
+                        <!-- <form action="#" class="newsletter-form-1 mt--40">
                             <input type="email" placeholder="Enter Your E-Email">
                             <button type="submit" class="rbt-btn btn-md btn-gradient hover-icon-reverse">
                                 <span class="icon-reverse-wrapper">
@@ -1656,9 +1654,9 @@
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 </span>
-                            </button>
-                        </form>
-                        <span class="note-text color-white mt--20">No ads, No trails, No commitments</span>
+                            </button> 
+                        </form> -->
+                        <span class="note-text color-white mt--20">Sin anuncios, sin senderos, sin compromisos</span>
 
                         <div class="row row--15 mt--50">
                             <!-- Start Single Counter -->
@@ -1669,8 +1667,8 @@
                                             <h3 class="counter color-white"><span class="odometer"
                                                     data-count="500">00</span>
                                             </h3>
-                                            <h5 class="title color-white">Successfully Trained</h5>
-                                            <span class="subtitle color-white">Learners &amp; counting</span>
+                                            <h5 class="title color-white">Capacitados exitosamente</h5>
+                                            <span class="subtitle color-white">Estudiantes &amp; contando</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1685,8 +1683,8 @@
                                             <h3 class="counter color-white"><span class="odometer"
                                                     data-count="100">00</span>
                                             </h3>
-                                            <h5 class="title color-white">Certification Students</h5>
-                                            <span class="subtitle color-white">Online Course</span>
+                                            <h5 class="title color-white">Estudiantes de Certificación</h5>
+                                            <span class="subtitle color-white">Cursos en línea</span>
                                         </div>
                                     </div>
                                 </div>

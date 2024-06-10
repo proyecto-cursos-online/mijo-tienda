@@ -4,13 +4,13 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-inner text-center">
-                    <h2 class="title">Cart</h2>
+                    <h2 class="title">Carro de Compra</h2>
                     <ul class="page-list">
                         <li class="rbt-breadcrumb-item"><a href="index.html">Home</a></li>
                         <li>
                             <div class="icon-right"><i class="feather-chevron-right"></i></div>
                         </li>
-                        <li class="rbt-breadcrumb-item active">Cart</li>
+                        <li class="rbt-breadcrumb-item active">Carro de Compra</li>
                     </ul>
                 </div>
             </div>
@@ -82,17 +82,17 @@
                             <!-- Discount Coupon -->
                             <div class="discount-coupon edu-bg-shade">
                                 <div class="section-title text-start">
-                                    <h4 class="title mb--30">Discount Coupon Code</h4>
+                                    <h4 class="title mb--30">Código de cupón de descuento</h4>
                                 </div>
                                 <form action="#">
                                     <div class="row">
                                         <div class="col-md-6 col-12 mb--25">
-                                            <input type="text" placeholder="Coupon Code" name="code" [(ngModel)]="code">
+                                            <input type="text" placeholder="Código promocional" name="code" [(ngModel)]="code">
                                         </div>
                                         <div class="col-md-6 col-12 mb--25">
                                             <button class="rbt-btn btn-gradient hover-icon-reverse btn-sm" (click)="applyCupon()">
                                                 <span class="icon-reverse-wrapper">
-                                                    <span class="btn-text">Apply Code</span>
+                                                    <span class="btn-text">Aplicar el código</span>
                                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                                 </span>
@@ -108,11 +108,11 @@
                             <div class="cart-summary">
                                 <div class="cart-summary-wrap">
                                     <div class="section-title text-start">
-                                        <h4 class="title mb--30">Cart Summary</h4>
+                                        <h4 class="title mb--30">Resumen de la compra</h4>
                                     </div>
                                     <p>Sub Total <span>${{ totalSum }}</span></p>
-                                    <p>Shipping Cost <span>$00.00</span></p>
-                                    <h2>Grand Total <span>${{ totalSum }}</span></h2>
+                                    <p>Costo de envío <span>$00.00</span></p>
+                                    <h2>Total <span>${{ totalSum }}</span></h2>
                                 </div>
 
                                 <div class="cart-submit-btn-group">
