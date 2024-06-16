@@ -562,7 +562,7 @@
                                                 <span class="current-price">{{ getTotalPriceCourse(COURSE) }} USD</span>
                                                 <span class="off-price" *ngIf="COURSE.discount_g">{{ COURSE.precio_usd }}</span>
                                             </div>
-                                            <a class="rbt-btn-link left-icon" [attr.href]="'landing-curso/'+COURSE.slug"><i class="feather-shopping-cart"></i> Add To Cart</a>
+                                            <a class="rbt-btn-link left-icon" [attr.href]="'landing-curso/'+COURSE.slug"><i class="feather-shopping-cart"></i> Añadir a la cesta</a>
                                         </div>
                                     </div>
                                 </div>
@@ -613,14 +613,14 @@
                                 
                                 <div class="add-to-card-button mt--15">
                                     <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" href="#" onclick="return false;" (click)="addCart()">
-                                        <span class="btn-text">Add to Cart</span>
+                                        <span class="btn-text">Añadir a la cesta</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </a>
                                 </div>
     
                                 <div class="buy-now-btn mt--15">
                                     <a class="rbt-btn btn-border icon-hover w-100 d-block text-center" href="#">
-                                        <span class="btn-text">Buy Now</span>
+                                        <span class="btn-text">Comprar Ahora</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </a>
                                 </div>
@@ -629,28 +629,27 @@
                             <ng-container *ngIf="is_have_course">
                                 <div class="add-to-card-button mt--15">
                                     <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" [href]="'/mi-curso/'+SLUG" target="_blank">
-                                        <span class="btn-text">Go Course</span>
+                                        <span class="btn-text">Ir al Curso</span>
                                         <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     </a>
                                 </div>
                             </ng-container>
-                            <span class="subtitle"><i class="feather-rotate-ccw"></i> 30-Day Money-Back
-                                Guarantee</span>
+                            <span class="subtitle"><i class="feather-rotate-ccw"></i> 30 días de garantía de devolución de dinero</span>
 
 
                             <div class="rbt-widget-details has-show-more">
                                 <ul class="has-show-more-inner-content rbt-course-details-list-wrapper">
-                                    <li><span>Start Date</span><span class="rbt-feature-value rbt-badge-5">{{ LANDING_COURSE.time_course }}</span>
+                                    <li><span>Fecha de inicio</span><span class="rbt-feature-value rbt-badge-5">{{ LANDING_COURSE.time_course }}</span>
                                     </li>
-                                    <li><span>Enrolled</span><span class="rbt-feature-value rbt-badge-5">100</span></li>
-                                    <li><span>Files Download</span><span class="rbt-feature-value rbt-badge-5">{{ LANDING_COURSE.files_count }}</span></li>
-                                    <li><span>Skill Level</span><span class="rbt-feature-value rbt-badge-5">{{ LANDING_COURSE.level }}</span></li>
-                                    <li><span>Language</span><span class="rbt-feature-value rbt-badge-5">{{ LANDING_COURSE.idioma }}</span></li>
-                                    <li><span>Quizzes</span><span class="rbt-feature-value rbt-badge-5">10</span></li>
-                                    <li><span>Certificate</span><span class="rbt-feature-value rbt-badge-5">Yes</span></li>
-                                    <li><span>Pass Percentage</span><span class="rbt-feature-value rbt-badge-5">95%</span></li>
+                                    <li><span>Inscritos</span><span class="rbt-feature-value rbt-badge-5">100</span></li>
+                                    <li><span>Descarga de archivos</span><span class="rbt-feature-value rbt-badge-5">{{ LANDING_COURSE.files_count }}</span></li>
+                                    <li><span>Nivel de habilidad</span><span class="rbt-feature-value rbt-badge-5">{{ LANDING_COURSE.level }}</span></li>
+                                    <li><span>Lenguaje</span><span class="rbt-feature-value rbt-badge-5">{{ LANDING_COURSE.idioma }}</span></li>
+                                    <!-- <li><span>Cuestionarios</span><span class="rbt-feature-value rbt-badge-5">10</span></li>
+                                    <li><span>Certificados</span><span class="rbt-feature-value rbt-badge-5">Yes</span></li>
+                                    <li><span>Porcentaje de aprobación</span><span class="rbt-feature-value rbt-badge-5">95%</span></li> -->
                                 </ul>
-                                <div class="rbt-show-more-btn">Show More</div>
+                                <div class="rbt-show-more-btn">Ver más..</div>
                             </div>
 
                             <div class="social-share-wrapper mt--30 text-center">
@@ -753,7 +752,7 @@
                             </div>
                             <div class="rbt-card-bottom">
                                 <div class="rbt-price">
-                                    <span class="current-price">{{ getTotalPriceCourse(COURSE) }} USD</span>
+                                    <span class="current-price">{{ getTotalPriceCourse(COURSE) }} PEN</span>
                                     <span class="off-price" *ngIf="COURSE.discount_g">{{ COURSE.precio_usd }}</span>
                                 </div>
                                 <a class="rbt-btn-link left-icon" [attr.href]="'landing-curso/'+COURSE.slug"><i class="feather-shopping-cart"></i> Add To Cart</a>
