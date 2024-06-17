@@ -44,8 +44,7 @@ export class CoursesDetailComponent implements OnInit{
       this.campaing_discount_id = resp.campaing_discount;
     })
     this.tiendaGuestService.landingCourse(this.SLUG,this.campaing_discount_id).subscribe((resp:any) => {
-      console.log(resp);
-      console.log('hola');
+      console.log(resp.DISCOUNT);
       this.LANDING_COURSE = resp.course;
       this.courses_related_instructor = resp.courses_related_instructor;
       this.courses_related_categories = resp.courses_related_categories;
